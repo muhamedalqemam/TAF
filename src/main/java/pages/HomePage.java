@@ -14,9 +14,42 @@ public class HomePage extends PageBase{
 
 	@FindBy(linkText = "Register")
 	WebElement RegisterLink;
+	
+	@FindBy(linkText = "Log in")
+	WebElement LoginLink;
+	
+	@FindBy(css = "a.ico-logout")
+	public WebElement LogoutLink;
+	
+	@FindBy(linkText = "My account")
+	WebElement MyAccountPage;
+	
+	@FindBy(id = "small-searchterms")
+	WebElement SearchBarTextBox;
+	
+	@FindBy(css = "button.button-1.search-box-button")
+	WebElement SearchButton;
+	
 
 	public void OpenRegisterationLink () {
-		RegisterLink.click();
+		ClickButton(RegisterLink);
 	}
-
+	
+	public void OpenLoginLink() {
+		ClickButton(LoginLink);
+	}
+	
+	public void LogoutUser() {
+		ClickButton(LogoutLink);
+	}
+	
+	public void OpenMyAccount() {
+		ClickButton(MyAccountPage);
+	}
+	
+	public void SearchForProduct(String Value) {
+		SetText(SearchBarTextBox, Value);
+		ClickButton(SearchButton);
+		
+	}
 }

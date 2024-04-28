@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NopEcommerce Regression Test suite]">
+  <test thread-count="5" name="First Demo test(failed)">
+    <classes>
+      <class name="tests.UserRegisterationTest">
+        <methods>
+          <include name="StopDriver"/>
+          <include name="TestRegister"/>
+          <include name="StartDriver"/>
+        </methods>
+      </class> <!-- tests.UserRegisterationTest -->
+    </classes>
+  </test> <!-- First Demo test(failed) -->
+</suite> <!-- Failed suite [NopEcommerce Regression Test suite] -->

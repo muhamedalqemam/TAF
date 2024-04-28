@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class UserRegestrationPage extends PageBase {
+public class UserRegisterationPage extends PageBase {
 
-	public UserRegestrationPage(WebDriver driver) {
+	public UserRegisterationPage(WebDriver driver) {
 		super(driver);
 
 	}
@@ -32,15 +32,25 @@ public class UserRegestrationPage extends PageBase {
 	@FindBy(id = "register-button")
 	WebElement RegisterButton;
 	
+	@FindBy(css = "div.result")
+	public WebElement RegisterMessage;
 	
+	@FindBy(linkText = "Log in")
+	WebElement LoginLink;
+
+
 	public void UserRegisteration(String FirstName, String LastName, String Email, String Password) {
-		GenderRadioButon.click();
-		FirstNameTextBox.sendKeys(FirstName);
-		LastNameTextBox.sendKeys(LastName);
-		EmailTextBox.sendKeys(Email);
-		PasswordTextBox.sendKeys(Password);
-		ConfirmPasswordTextBox.sendKeys(Password);
-		RegisterButton.click();
+		ClickButton(GenderRadioButon);
+		SetText(FirstNameTextBox, FirstName);
+		SetText(LastNameTextBox, LastName);
+		SetText(EmailTextBox, Email);
+		SetText(PasswordTextBox, Password);
+		SetText(ConfirmPasswordTextBox, Password);
+		ClickButton(RegisterButton);
+	}
+	
+	public void Login() {
+		ClickButton(LoginLink);
 	}
 
 

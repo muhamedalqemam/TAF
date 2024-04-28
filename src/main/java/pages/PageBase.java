@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class PageBase {
@@ -8,6 +9,14 @@ public class PageBase {
 
 	public PageBase (WebDriver driver) {
 		PageFactory.initElements(driver, this);
+	}
+
+	public static void ClickButton(WebElement Element) {
+		Element.click();
+	}
+
+	public static void SetText(WebElement TextElement, String Value) {
+		TextElement.sendKeys(Value);
 	}
 
 }
