@@ -37,6 +37,9 @@ public class UserRegisterationPage extends PageBase {
 	
 	@FindBy(linkText = "Log in")
 	WebElement LoginLink;
+	
+	@FindBy(css = "a.ico-logout")
+	public WebElement LogoutLink;
 
 
 	public void UserRegisteration(String FirstName, String LastName, String Email, String Password) {

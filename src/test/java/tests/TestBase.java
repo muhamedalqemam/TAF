@@ -13,9 +13,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import utilities.Helper;
 
-public class TestBase {
+public class TestBase extends AbstractTestNGCucumberTests{
 
 	public static WebDriver driver;
 
@@ -40,7 +41,7 @@ public class TestBase {
 	
 
 	
-	@AfterMethod(dependsOnMethods = "testMethod")
+	@AfterMethod
 	public void ScreenshotOnFailure(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			System.out.println("Failed");
